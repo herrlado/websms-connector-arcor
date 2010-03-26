@@ -17,9 +17,9 @@
 		not, see <http://www.gnu.org/licenses/>.
 	-->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-	android:title="@string/settings">
+	android:title="@string/connector_settings">
 	<CheckBoxPreference android:key="enable"
-		android:title="@string/enable" />
+		android:title="@string/enable_connector" />
 	<EditTextPreference android:key="user"
 		android:title="@string/username_" android:dialogTitle="@string/username_"
 		android:inputType="text" android:dependency="enable" />

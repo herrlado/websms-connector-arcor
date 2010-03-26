@@ -113,11 +113,11 @@ public class ConnectorArcor extends Connector {
 
 	@Override
 	public final ConnectorSpec initSpec(final Context context) {
-		final String name = context.getString(R.string.name);
+		final String name = context.getString(R.string.connector_name);
 		final ConnectorSpec c = new ConnectorSpec(TAG, name);
-		c.setAuthor(context.getString(R.string.author));
+		c.setAuthor(context.getString(R.string.connector_author));
 		c.setBalance(null);
-		c.setPrefsTitle(context.getString(R.string.settings));
+		c.setPrefsTitle(context.getString(R.string.connector_settings));
 		c.setCapabilities(ConnectorSpec.CAPABILITIES_UPDATE
 				| ConnectorSpec.CAPABILITIES_SEND
 				| ConnectorSpec.CAPABILITIES_PREFS);
