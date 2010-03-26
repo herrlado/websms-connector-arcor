@@ -113,9 +113,9 @@ public class ConnectorArcor extends Connector {
 
 	@Override
 	public final ConnectorSpec initSpec(final Context context) {
-		final String name = context.getString(R.string.connector_name);
-		ConnectorSpec c = new ConnectorSpec(TAG, name);
-		c.setAuthor(context.getString(R.string.connector_author));
+		final String name = context.getString(R.string.name);
+		final ConnectorSpec c = new ConnectorSpec(TAG, name);
+		c.setAuthor(context.getString(R.string.author));
 		c.setBalance(null);
 		c.setPrefsTitle(context.getString(R.string.settings));
 		c.setCapabilities(ConnectorSpec.CAPABILITIES_UPDATE
@@ -137,15 +137,15 @@ public class ConnectorArcor extends Connector {
 	private boolean login(final ConnectorContext ctx) throws WebSMSException {
 		try {
 
-			SharedPreferences p = ctx.getPreferences();
+			final SharedPreferences p = ctx.getPreferences();
 			final HttpPost request = createPOST(LOGIN_URL, getLoginPost(p
 					.getString(Preferences.USER, ""), p.getString(
 					Preferences.PASSWORD, "")));
 			final HttpResponse response = ctx.getClient().execute(request);
 			final String cutContent = cutLoginInfoFromContent(response
 					.getEntity().getContent());
-			int idx = cutContent.indexOf(MATCH_LOGIN_SUCCESS);
-			if (cutContent.indexOf(MATCH_LOGIN_SUCCESS) == -1) {
+			final int idx = cutContent.indexOf(MATCH_LOGIN_SUCCESS);
+			if (idx == -1) {
 				throw new WebSMSException(ctx.getContext(), R.string.error_pw);
 			}
 		} catch (final Exception e) {
@@ -290,7 +290,7 @@ public class ConnectorArcor extends Connector {
 	 */
 	private String getSmsPost(final ConnectorContext ctx) throws Exception {
 		final StringBuilder sb = new StringBuilder();
-		String[] to = ctx.getCommand().getRecipients();
+		final String[] to = ctx.getCommand().getRecipients();
 		for (final String r : to) {
 			sb.append(r).append(",");
 		}
