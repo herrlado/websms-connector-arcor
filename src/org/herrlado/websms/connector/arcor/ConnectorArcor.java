@@ -51,7 +51,7 @@ import de.ub0r.android.websms.connector.common.WebSMSException;
 public class ConnectorArcor extends Connector {
 
 	/** Tag for output. */
-	private static final String TAG = "WebSMS.arcor";
+	private static final String TAG = "WebSMS.arcor.de";
 
 	/**
 	 * Pattern to extract free sms count from sms page. Looks like.
