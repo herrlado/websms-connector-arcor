@@ -3,7 +3,7 @@
 		Copyright (C) 2010 Felix Bechstein
 	-->
 	<!--
-		This file is part of WebSMS. This program is free software; you can
+		This file is part of websms-connector.arcor.de. This program is free software; you can
 		redistribute it and/or modify it under the terms of the GNU General
 		Public License as published by the Free Software Foundation; either
 		version 3 of the License, or (at your option) any later version.
@@ -17,10 +17,10 @@
 		not, see <http://www.gnu.org/licenses/>.
 	-->
 <resources>
-	<string name="connector_name">WebSMS: Arcor Connector</string>
+	<string name="connector_name">WebSMS: arcor.de Connector</string>
 	<string name="connector_author">Lado Kumsiashvili &lt;herrlado@gmail.com&gt;</string>
-	<string name="connector_settings">Einstellungen - Arcor</string>
-	<string name="enable_connector">Aktiviere Arcor</string>
+	<string name="connector_settings">Einstellungen - arcor.de</string>
+	<string name="enable_connector">Aktiviere arcor.de</string>
 	<string name="copy_sent_sms">Gesendete SMS im "gesendet" ordner speichern</string>
 	<string name="enable_validated_number">Validierte Nummer verwenden</string>
 	<string name="enable_validated_number_hint">Wenn bei Arcor eingestellt, wird die eingestellt Nummer als Absender verwendet.</string>
