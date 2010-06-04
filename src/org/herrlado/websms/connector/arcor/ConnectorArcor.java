@@ -291,7 +291,7 @@ public class ConnectorArcor extends Connector {
 		final StringBuilder sb = new StringBuilder();
 		final String[] to = ctx.getCommand().getRecipients();
 		for (final String r : to) {
-			sb.append(r).append(",");
+			sb.append(Utils.getRecipientsNumber(r)).append(",");
 		}
 		final StringBuilder sb1 = new StringBuilder();
 		sb1.append("empfaengerAn=");
@@ -400,7 +400,7 @@ public class ConnectorArcor extends Connector {
 	private static String cutLoginInfoFromContent(final InputStream is)
 			throws IOException {
 		// return Utils.stream2str(is);
-		return Utils.stream2str(is, LOGOUT_LINK_AREA_START,
+		return Utils.stream2str(is, ARCOR_ENCODING, LOGOUT_LINK_AREA_START,
 				+LOGOUT_LINK_AREAD_END);
 	}
 
@@ -417,6 +417,6 @@ public class ConnectorArcor extends Connector {
 	private static String cutFreeCountFromContent(final InputStream is)
 			throws IOException {
 		// return Utils.stream2str(is);
-		return Utils.stream2str(is, SMS_COUNT_AREA_START, SMS_COUNT_AREA_END);
+		return Utils.stream2str(is, ARCOR_ENCODING, SMS_COUNT_AREA_START, SMS_COUNT_AREA_END);
 	}
 }
