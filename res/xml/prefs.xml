@@ -34,4 +34,10 @@
 		android:inputType="text" android:dependency="enable"
 		android:summary="@string/enable_validated_number_hint"
 		android:disableDependentsState="true" />
+	<CheckBoxPreference android:key="enable_chain_sms"
+		android:defaultValue="false" android:title="@string/enable_chain_sms"
+		android:inputType="text" android:dependency="enable"
+		android:summary="@string/enable_chain_sms_hint"
+		android:disableDependentsState="true" />
+		
 </PreferenceScreen>

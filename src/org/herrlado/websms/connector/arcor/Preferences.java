@@ -40,6 +40,9 @@ public final class Preferences extends PreferenceActivity {
 	/** Preference's name: ovrride default sender number? - arcor. */
 	static final String ENABLE_VALIDATED_NUMBER = // .
 	"enable_validated_number";
+	
+	static final String ENABLE_CHAIN_SMS = //
+	    "enable_chain_sms";
 
 	/**
 	 * {@inheritDoc}

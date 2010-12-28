@@ -26,5 +26,8 @@
 	<string name="enable_validated_number">Use validated number</string>
 	<string name="enable_validated_number_hint">If configured by arcor.de, it will be used as the sender number.</string>
 	<string name="log_unknow_status_after_send">The Message was probably not be sent. Please contact the Developer!</string>
+	<string name="enable_chain_sms">Split long messages</string>
+	<string name="enable_chain_sms_hint">If the text is longer then allowed, it will be sent splitted.</string>
+	<string name="text_too_long">The text ist too long. Consider enabling Splitting long messages!</string>
 </resources>
 
