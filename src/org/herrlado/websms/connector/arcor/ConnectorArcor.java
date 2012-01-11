@@ -91,16 +91,16 @@ public class ConnectorArcor extends Connector {
             + " Firefox/3.0.9 (.NET CLR 3.5.30729)";
 
     /** where to find sms count. */
-    private static final int SMS_COUNT_AREA_START = 16100;
+    //private static final int SMS_COUNT_AREA_START = 16100;
 
     /** where to find sms count. */
-    private static final int SMS_COUNT_AREA_END = SMS_COUNT_AREA_START + 8000;
+    //private static final int SMS_COUNT_AREA_END = SMS_COUNT_AREA_START + 8000;
 
     /** where to find logout link. */
-    private static final int LOGOUT_LINK_AREA_START = 4000;
+    //private static final int LOGOUT_LINK_AREA_START = 4000;
 
     /** where to find logout link. */
-    private static final int LOGOUT_LINK_AREAD_END = LOGOUT_LINK_AREA_START + 8000;
+    //private static final int LOGOUT_LINK_AREAD_END = LOGOUT_LINK_AREA_START + 8000;
 
     /** Login URL, to send Login (POST). */
     private static final String LOGIN_URL = "https://www.arcor.de" + "/login/login.jsp";
@@ -145,6 +145,7 @@ public class ConnectorArcor extends Connector {
                 throw new WebSMSException(ctx.getContext(), R.string.error_pw);
             }
         } catch (final Exception e) {
+        	Log.w(TAG, e);
             throw new WebSMSException(e.getMessage());
         }
         return true;
@@ -162,6 +163,7 @@ public class ConnectorArcor extends Connector {
             this.notifyFreeCount(ctx, cutFreeCountFromContent(response.getEntity().getContent()));
 
         } catch (final Exception ex) {
+        	Log.w(TAG,ex);
             throw new WebSMSException(ex.getMessage());
         }
     }
@@ -236,6 +238,7 @@ public class ConnectorArcor extends Connector {
 
             return sent;
         } catch (final Exception ex) {
+        	Log.w(TAG, ex);
             throw new WebSMSException(ex.getMessage());
         }
     }
@@ -395,7 +398,7 @@ public class ConnectorArcor extends Connector {
      */
     private static String cutLoginInfoFromContent(final InputStream is) throws IOException {
         // return Utils.stream2str(is);
-        return Utils.stream2str(is, ARCOR_ENCODING, LOGOUT_LINK_AREA_START, +LOGOUT_LINK_AREAD_END);
+        return Utils.stream2str(is, ARCOR_ENCODING);
     }
 
     /**
@@ -408,6 +411,6 @@ public class ConnectorArcor extends Connector {
      */
     private static String cutFreeCountFromContent(final InputStream is) throws IOException {
         // return Utils.stream2str(is);
-        return Utils.stream2str(is, ARCOR_ENCODING, SMS_COUNT_AREA_START, SMS_COUNT_AREA_END);
+        return Utils.stream2str(is, ARCOR_ENCODING);
     }
 }
